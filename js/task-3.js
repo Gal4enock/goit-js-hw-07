@@ -22,3 +22,5 @@ images.map(el => {
   const { url, alt } = el;
   elementList.insertAdjacentHTML('afterbegin', `<li><img src="${url}" class="img" width="370" height="294" alt="${alt}"></li>`); 
 })
+
+
