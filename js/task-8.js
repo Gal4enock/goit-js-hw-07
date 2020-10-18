@@ -13,19 +13,12 @@ const inputNumber = document.querySelector('[type="number"]');
 const btnCreate = document.querySelector('[data-action="render"]');
 const btnDelete = document.querySelector('[data-action="destroy"]');
 const body = document.querySelector("body")
-// let amount = 0;
-//   inputNumber.addEventListener("input", e => {
-//     amount = e.target.value;
-//     console.log(amount);
-// })
+const bigBox = document.querySelector("#boxes");
 
+const render = function () {
+createBoxes (inputNumber.value)
+}
 const createBoxes = function (amount) {
- let amount = 0;
-  inputNumber.addEventListener("input", e => {
-    amount = e.target.value;
-    console.log(amount);
-})
-  const bigBox = document.querySelector("#boxes");
   for (let i = 0; i <= amount-1; i += 1) {
     let width = 30;
     let height = 30;
@@ -38,4 +31,8 @@ const createBoxes = function (amount) {
     console.log(bigBox);
   }
 }
-btnCreate.addEventListener("click", createBoxes)
+const deletBoxes = function () {
+  bigBox.innerHTML = "";
+}
+btnCreate.addEventListener("click", render);
+btnDelete.addEventListener("click", deletBoxes)
