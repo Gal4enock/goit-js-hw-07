@@ -3,3 +3,7 @@ const inputText = document.querySelector("#name-input");
 const outputText = document.querySelector("#name-output");
 
 console.log(outputText);
+
+inputText.addEventListener("input", e => {
+  outputText.textContent = e.target.value;
+})
