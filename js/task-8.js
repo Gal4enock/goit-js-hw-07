@@ -22,17 +22,18 @@ const createBoxes = function (amount) {
   for (let i = 0; i <= amount-1; i += 1) {
     let width = 30;
     let height = 30;
-    let x = Math.round(Math.random() * 255);
-    let y = Math.round(Math.random() * 255);
-    let z = Math.round(Math.random() * 255);
+    let r = Math.round(Math.random() * 255);
+    let g = Math.round(Math.random() * 255);
+    let b = Math.round(Math.random() * 255);
     
-    bigBox.insertAdjacentHTML('beforeend', `<div style='width: ${width + i * 10}px; height: ${height + i * 10}px; background-color: rgb(${x},${y},${z})'></div>`);
+    bigBox.insertAdjacentHTML('beforeend', `<div style='width: ${width + i * 10}px; height: ${height + i * 10}px; background-color: rgb(${r},${g},${b})'></div>`);
 
     console.log(bigBox);
   }
 }
 const deletBoxes = function () {
   bigBox.innerHTML = "";
+  inputNumber.value = "";
 }
 btnCreate.addEventListener("click", render);
 btnDelete.addEventListener("click", deletBoxes)

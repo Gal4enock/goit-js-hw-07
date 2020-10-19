@@ -7,13 +7,11 @@
 const targetInput = document.querySelector("#validation-input");
 const dataLength = targetInput.getAttribute("data-length");
 
-
-targetInput.addEventListener("input", e => {
-  let targetLeng = e.target.value.length;
-
+const toCompare = function (e) {
+ let targetLeng = e.target.value.length;
   if (targetLeng === Number(dataLength)) {
     targetInput.classList.remove("invalid");  
     targetInput.classList.add("valid");
-  } else targetInput.classList.add("invalid")
-    
-})
+  } else targetInput.classList.add("invalid") 
+}
+targetInput.addEventListener("input", toCompare)
