@@ -4,4 +4,7 @@ const outputText = document.querySelector("#name-output");
 
 inputText.addEventListener("input", e => {
   outputText.textContent = e.target.value;
+  if (!outputText.textContent) {
+    outputText.textContent = "незнакомец";
+  }
 })
