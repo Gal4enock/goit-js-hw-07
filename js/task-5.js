@@ -2,8 +2,8 @@
 const inputText = document.querySelector("#name-input");
 const outputText = document.querySelector("#name-output");
 
-inputText.addEventListener("input", e => {
-  outputText.textContent = e.target.value;
+inputText.addEventListener("input", () => {
+  outputText.textContent = inputText.value;
   if (!outputText.textContent) {
     outputText.textContent = "незнакомец";
   }
